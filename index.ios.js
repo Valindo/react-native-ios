@@ -76,9 +76,9 @@
 
   case 'Profile':
   return <Profile
-  backButton={()=>{
-   navigator.pop()
- }}
+ homeButton={()=>{
+    navigator.popToTop(0)
+  }}
  />
 }
 }

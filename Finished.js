@@ -26,8 +26,8 @@ export default class Finished extends Component {
 			/>
 			</View>
 			<View style={{flex: 1, alignItems: 'center'}}>
-			<Text style={styles.title}>Hurray Valindo! Now you mastered the art of basic app making</Text>
-			<Text style={styles.p}>We will Notify you when the next version is complete</Text>
+			<Text style={styles.title}>Hurray Valindo! Now you've mastered the art of basic app making</Text>
+			<Text style={styles.p}>We will notify you once the next version is complete</Text>
 			<TouchableHighlight style={styles.continueButton}>
 			<Text style={styles.continueText}>Continue</Text>
 			</TouchableHighlight>
