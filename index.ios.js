@@ -10,11 +10,7 @@
    StyleSheet,
    Text,
    View,
-   Navigator,
-   Alert,
-   StatusBar,
-   TouchableHighlight,
-   NavigationBarRouteMapper
+   Navigator
  } from 'react-native';
  import  MainPage  from './MainPage';
  import LessonList from './LessonList'
