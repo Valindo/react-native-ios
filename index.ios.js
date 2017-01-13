@@ -18,36 +18,83 @@
  } from 'react-native';
  import  MainPage  from './MainPage';
  import LessonList from './LessonList'
+ import Lesson from './Lesson';
+ import Finished from './Finished';
+ import Profile from './Profile';
  
 
  export default class testApp extends Component {
+
    renderScene(route, navigator){
 
      switch(route.name){
        case 'MainPage':
-       return <MainPage lessonList={()=>{
+       return <MainPage 
+       lessonList={()=>{
          navigator.push({
            name: 'LessonList'
          })
-       }}/>
+       }}
+
+       />
 
        case 'LessonList':
-       return <LessonList/>
-     }
-   }
+       return <LessonList 
+       backButton={()=>{
+         navigator.pop()
+       }} 
+       openLesson={()=>{
+        navigator.push({
+          name: 'Lesson'
+        })
+      }}
+      />
 
-   render() {
-     return (
-       <Navigator
-       initialRoute={{name: 'MainPage', index: 0}}
-       renderScene={this.renderScene}
-       
-       />
-       );
-   }
+      case 'Lesson':
+      return <Lesson
+      backButton={()=>{
+       navigator.pop()
+     }}
+     finishedButton={()=>{
+      navigator.push({
+        name: 'Finished'
+      })
+    }}
+    />
+
+    case 'Finished':
+    return <Finished
+    backButton={()=>{
+     navigator.pop()
+   }}
+   profileButton={()=>{
+    navigator.push({
+      name: 'Profile'
+    })
+  }}
+  />
+
+  case 'Profile':
+  return <Profile
+  backButton={()=>{
+   navigator.pop()
+ }}
+ />
+}
+}
+
+render() {
+ return (
+   <Navigator
+   initialRoute={{name: 'MainPage', index: 0}}
+   renderScene={this.renderScene}
+
+   />
+   );
  }
+}
 
 
 
 
- AppRegistry.registerComponent('testApp', () => testApp);
+AppRegistry.registerComponent('testApp', () => testApp);
